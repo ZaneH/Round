@@ -55,8 +55,7 @@ class SignInViewController: UIViewController {
 				return;
 			}
 			
-			let successAlertController = UIAlertController.init(title: "Success", message: "You're signed in.", preferredStyle: .Alert);
-			self.presentViewController(successAlertController, animated: true, completion: nil);
+			self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("mainView"))!, animated: true, completion: nil);
 		});
 	}
 }
