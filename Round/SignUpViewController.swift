@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer?
-        tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
+        tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap!)
         
         // Do any additional setup after loading the view.
