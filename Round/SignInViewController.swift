@@ -14,8 +14,36 @@ class SignInViewController: UIViewController {
 	@IBOutlet weak var usernameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	
+    @IBOutlet var signUpButton: UIButton!
+    @IBOutlet var logInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer?
+        tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap!)
+        
+        
+        
+        logInButton.layer.cornerRadius = 15
+        logInButton.layer.backgroundColor = UIColor.whiteColor().CGColor
+        logInButton.layer.borderWidth = 1.5
+        logInButton.layer.borderColor = UIColor(colorLiteralRed: 135.0/255, green: 56.0/255, blue: 148.0/255, alpha: 1).CGColor
+        logInButton.setTitleColor(UIColor(colorLiteralRed: 135.0/255, green: 56.0/255, blue: 148.0/255, alpha: 1), forState: UIControlState.Normal)
+        
+        
+        
+        signUpButton.layer.cornerRadius = 15
+        signUpButton.layer.backgroundColor = UIColor.whiteColor().CGColor
+        signUpButton.layer.borderWidth = 1.5
+        signUpButton.layer.borderColor = UIColor(colorLiteralRed: 236.0/255, green: 53.0/255, blue: 127.0/255, alpha: 1.0).CGColor
+        signUpButton.setTitleColor(UIColor(colorLiteralRed: 236.0/255, green: 53.0/255, blue: 127.0/255, alpha: 1.0), forState: UIControlState.Normal)
+
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 	
 	@IBAction func didTapLogin(sender: AnyObject) {

@@ -17,8 +17,46 @@ class SignUpViewController: UIViewController {
 	@IBOutlet weak var lastNameTextField: UITextField!
 	@IBOutlet weak var firstNameTextField: UITextField!
 	
+    @IBOutlet var signUpButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer?
+        tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap!)
+        
+        // Do any additional setup after loading the view.
+        cancelButton.layer.cornerRadius = 15
+        cancelButton.layer.backgroundColor = UIColor.whiteColor().CGColor
+        cancelButton.layer.borderWidth = 1.5
+        cancelButton.layer.borderColor = UIColor(colorLiteralRed: 244.0/255, green: 100.0/255, blue: 118.0/255, alpha: 1).CGColor
+        cancelButton.setTitleColor(UIColor(colorLiteralRed: 244.0/255, green: 100.0/255, blue: 118.0/255, alpha: 1), forState: .Normal)
+        
+        if cancelButton.highlighted {
+            cancelButton.layer.backgroundColor = UIColor(colorLiteralRed: 244.0/255, green: 100.0/255, blue: 118.0/255, alpha: 1).CGColor
+            cancelButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        }
+        
+        
+        
+        signUpButton.layer.cornerRadius = 15
+        signUpButton.layer.backgroundColor = UIColor.whiteColor().CGColor
+        signUpButton.layer.borderWidth = 1.5
+        signUpButton.layer.borderColor = UIColor(colorLiteralRed: 236.0/255, green: 53.0/255, blue: 127.0/255, alpha: 1.0).CGColor
+        signUpButton.setTitleColor(UIColor(colorLiteralRed: 236.0/255, green: 53.0/255, blue: 127.0/255, alpha: 1.0), forState: .Normal)
+        
+        if signUpButton.highlighted {
+            signUpButton.layer.backgroundColor = UIColor(colorLiteralRed: 236.0/255, green: 53.0/255, blue: 127.0/255, alpha: 1.0).CGColor
+            signUpButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        }
+
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 	
 	@IBAction func didTapSignUp(sender: AnyObject) {

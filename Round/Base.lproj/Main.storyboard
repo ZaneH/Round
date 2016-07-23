@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -127,7 +127,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logInButton" destination="K8T-FP-mld" id="GRY-fu-FHm"/>
                         <outlet property="passwordTextField" destination="L3V-Qv-XgE" id="b1T-AB-AyV"/>
+                        <outlet property="signUpButton" destination="hJC-SL-lQP" id="GEs-CN-y7T"/>
                         <outlet property="usernameTextField" destination="4Y1-V9-hft" id="IOV-Ok-8kb"/>
                     </connections>
                 </viewController>
@@ -303,10 +305,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="NdD-NI-MUq" id="ZOH-y0-j14"/>
                         <outlet property="emailTextField" destination="HkA-5K-nby" id="yyO-3y-Bot"/>
                         <outlet property="firstNameTextField" destination="SwA-Mr-pvM" id="2RH-EC-KMu"/>
                         <outlet property="lastNameTextField" destination="dWD-22-G4D" id="NwB-UX-82z"/>
                         <outlet property="passwordTextField" destination="4eM-7m-PV1" id="00a-dA-AKD"/>
+                        <outlet property="signUpButton" destination="PJJ-0m-8i0" id="f73-H5-7q3"/>
                         <outlet property="usernameTextField" destination="HHL-NI-5Bq" id="nND-hm-rLj"/>
                     </connections>
                 </viewController>
