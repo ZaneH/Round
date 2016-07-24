@@ -8,14 +8,8 @@
 
 import UIKit
 import JSQMessagesViewController
-import Firebase
-import FirebaseDatabase
-import FirebaseAuth
 
 class MessagesViewController: JSQMessagesViewController {
-    
-    let rootRef = FIRDatabase.database().reference()
-    let person = FIRAuth.auth()?.currentUser
     
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
@@ -27,6 +21,8 @@ class MessagesViewController: JSQMessagesViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        self.title = "Mountain Chat"
         
         self.senderId = "0"
         self.senderDisplayName = "Name"
@@ -47,6 +43,10 @@ class MessagesViewController: JSQMessagesViewController {
         messages.append(message4)
         
         self.collectionView.backgroundColor = UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1)
+        
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen().bounds.width, height: 64))
+        self.view.addSubview(navBar);
+        self.view.bringSubviewToFront(navBar);
     }
     
     override func didReceiveMemoryWarning() {

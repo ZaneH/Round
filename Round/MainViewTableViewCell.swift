@@ -8,7 +8,13 @@
 
 import UIKit
 
+<<<<<<< HEAD:Round/MainViewTableViewCell.swift
 class MainViewTableViewCell: UITableViewCell {
+=======
+class EventTableCellTableViewCell: UITableViewCell {
+    @IBOutlet var eventTitle: UILabel!
+    @IBOutlet var eventDescription: UILabel!
+>>>>>>> origin/master:Round/EventTableCellTableViewCell.swift
 
     override func awakeFromNib() {
         super.awakeFromNib()
