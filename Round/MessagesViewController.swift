@@ -26,6 +26,7 @@ class MessagesViewController: JSQMessagesViewController {
         // Do any additional setup after loading the view.
         
         self.title = "Mountain Chat"
+        //self.navigationController!.navigationBar.tintColor = colorWithHexString("#f16277")
         
         self.senderId = "0"
         self.senderDisplayName = "Name"
