@@ -46,7 +46,7 @@ class MessagesViewController: JSQMessagesViewController {
         messages.append(message3)
         messages.append(message4)
         
-        self.collectionView.backgroundColor = UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1)
+        //self.collectionView.backgroundColor = UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,9 +90,9 @@ class MessagesViewController: JSQMessagesViewController {
     private func setupBubbles() {
         let factory = JSQMessagesBubbleImageFactory()
         outgoingBubbleImageView = factory.outgoingMessagesBubbleImageWithColor(
-            /*UIColor.jsq_messageBubbleBlueColor()*/UIColor.whiteColor())
+            /*UIColor.jsq_messageBubbleBlueColor()*/UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1))
         incomingBubbleImageView = factory.incomingMessagesBubbleImageWithColor(
-            UIColor.jsq_messageBubbleLightGrayColor())
+            /*UIColor.jsq_messageBubbleLightGrayColor()*/colorWithHexString("#f16277"))
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!,
@@ -108,9 +108,9 @@ class MessagesViewController: JSQMessagesViewController {
         let message = messages[indexPath.item]
         
         if message.senderId == senderId {
-            cell.textView!.textColor = UIColor.blackColor()
+            cell.textView!.textColor = UIColor.whiteColor()
         } else {
-            cell.textView!.textColor = UIColor.blackColor()
+            cell.textView!.textColor = UIColor.whiteColor()
         }
         
         return cell
