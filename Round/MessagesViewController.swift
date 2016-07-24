@@ -25,6 +25,8 @@ class MessagesViewController: JSQMessagesViewController {
         
         // Do any additional setup after loading the view.
         
+        self.title = "Mountain Chat"
+        
         self.senderId = "0"
         self.senderDisplayName = "Name"
         
@@ -111,6 +113,10 @@ class MessagesViewController: JSQMessagesViewController {
         }
         
         return cell
+    }
+    
+    @IBAction func dismissView() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*

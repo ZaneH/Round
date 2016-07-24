@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -843,7 +843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbE-Uk-2pY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="-445"/>
+            <point key="canvasLocation" x="1676" y="202"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="hp7-yT-EuT">
@@ -1159,7 +1159,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sRj-2j-Zg4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6c5-n2-mOq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6c5-n2-mOq">
+                            <connections>
+                                <action selector="dismissView" destination="ymf-1A-fbm" id="HHr-S0-XBq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tix-We-4Um" userLabel="First Responder" sceneMemberID="firstResponder"/>

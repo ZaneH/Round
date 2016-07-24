@@ -479,6 +479,10 @@ extension UserProfileViewController: FriendSearchTableViewCellDelegate {
 //        }
     }
     
+    @IBAction func dismissView() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
      // MARK: - Navigation
      

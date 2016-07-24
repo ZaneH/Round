@@ -38,9 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         startViewController = storyboard.instantiateViewControllerWithIdentifier("SplashViewController") as! UIViewController
         
-        UINavigationBar.appearance().backgroundColor = colorWithHexString("#f16277")
-
-        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = startViewController;
         self.window?.makeKeyAndVisible()
