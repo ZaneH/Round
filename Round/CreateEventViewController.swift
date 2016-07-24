@@ -7,20 +7,16 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseAuth
+import Parse
 
 let screenSize: CGRect = UIScreen.mainScreen().bounds
+
 
 class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     
      var locationManager = CLLocationManager()
     var locValue = CLLocation()
-    
-    let rootRef = FIRDatabase.database().reference()
-    let person = FIRAuth.auth()?.currentUser
-    let geoFire = GeoFire(firebaseRef: FIRDatabase.database().reference().child("geoFire"))
+
 
     @IBOutlet var descripField: UITextView!
     @IBOutlet var nameTextField: UITextField!
@@ -30,38 +26,27 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func createEvent(sender: AnyObject) {
         
-        var eventName = nameTextField.text
+        var eventName = nameTextField.text!
         var dateFormatter = NSDateFormatter()
+    
         
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
-        var strDate = dateFormatter.stringFromDate(datePick.date)
+        //var strDate = dateFormatter.stringFromDate(datePick.date)
         
         let descrip = String(descripField.text)
+        let locationValue = PFGeoPoint(location: Constants.locationManager.location)
         
-        //Firebase
+        //save event
+        let newEvent = PFObject(className: "Events")
+        newEvent["Name"] = eventName
+        newEvent["description"] = descrip
+        newEvent["location"] = locationValue
         
-        let root = self.rootRef.child("Events").childByAutoId()
-        root.child("Date").setValue(strDate)
-        root.child("Name").setValue(String(eventName))
-        root.child("Description").setValue(String(descrip))
-        root.child("UUID").setValue(String(person?.uid) as! String)
-        
-        let keyName = root.key
-        
-        //location
-        
-//        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
-//            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized){
-//            
-//            currentLocation = locManager.location!
-//            
-//        }
-        
-        geoFire.setLocation(locValue, forKey: keyName)
-        print(locValue)
-        print("success?")
+       newEvent.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }
         
     }
     
@@ -75,16 +60,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //firebase location - get
-//        geoFire.getLocationForKey("firebase-hq", withCallback: { (location, error) in
-//            if (error != nil) {
-//                print("An error occurred getting the location for \"firebase-hq\": \(error.localizedDescription)")
-//            } else if (location != nil) {
-//                print("Location for \"firebase-hq\" is [\(location.coordinate.latitude), \(location.coordinate.longitude)]")
-//            } else {
-//                print("GeoFire does not contain a location for \"firebase-hq\"")
-//            }
-//        })
         
         self.locationManager.requestAlwaysAuthorization()
         
@@ -150,5 +125,4 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

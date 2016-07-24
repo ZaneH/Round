@@ -7,25 +7,32 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
+import Parse
 
 class SignUpViewController: UIViewController {
-	@IBOutlet weak var passwordTextField: UITextField!
-	@IBOutlet weak var usernameTextField: UITextField!
-	@IBOutlet weak var emailTextField: UITextField!
-	@IBOutlet weak var lastNameTextField: UITextField!
-	@IBOutlet weak var firstNameTextField: UITextField!
-	
-    @IBOutlet var signUpButton: UIButton!
-    @IBOutlet var cancelButton: UIButton!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    // let keyboard fall when push anywhere
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let tap: UITapGestureRecognizer?
-        tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
         view.addGestureRecognizer(tap!)
         
         // Do any additional setup after loading the view.
@@ -52,31 +59,50 @@ class SignUpViewController: UIViewController {
             signUpButton.layer.backgroundColor = UIColor(colorLiteralRed: 236.0/255, green: 53.0/255, blue: 127.0/255, alpha: 1.0).CGColor
             signUpButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         }
-
+        
     }
     
-    func dismissKeyboard() {
-        view.endEditing(true)
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-	
-	@IBAction func didTapSignUp(sender: AnyObject) {
-		FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-			if let error = error {
-				// spit the error to the user
-				let errorAlertController = UIAlertController.init(title: "Whoops!", message: error.localizedDescription, preferredStyle: .Alert);
-				errorAlertController.addAction(UIAlertAction.init(title: "Dismiss", style: .Default, handler: nil));
-				
-				self.presentViewController(errorAlertController, animated: true, completion: nil);
-				return;
-			}
-			
-			// tell the user they've been signed up
-			let successAlertController = UIAlertController.init(title: "Success", message: "You've been registered successfully! Continue to the Sign In page.", preferredStyle: .Alert);
-			successAlertController.addAction(UIAlertAction.init(title: "Dismiss", style: .Default, handler: { (alert) in
-				self.dismissViewControllerAnimated(true, completion: nil);
-			}));
-			
-			self.presentViewController(successAlertController, animated: true, completion: nil);
-		});
-	}
+    
+    @IBAction func signUpPressed(sender: UIButton) {
+        let user = PFUser()
+        user.username = username.text
+        user.password = password.text
+        user["emailVerified"] = true
+        user.email = email.text
+        user["firstName"] = firstName.text
+        user["lastName"] = lastName.text
+        user["fullName"] = "\(firstName!.text) \(lastName!.text)"
+        
+        
+        if username.text != "" && password.text != "" && email.text != "" && firstName.text != "" && lastName.text != "" {
+            
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if error != nil {
+                    //                    _ = error.userInfo["error"] as? NSString // should delete
+                    // Show the errorString somewhere and let the user try again.
+                    let alert = UIAlertController(title: "Sorry", message: "Try to enter a valid email address.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                } else {
+                    // Hooray! Let them use the app now.
+                    print("success")
+                    let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("mainView")
+                    self.showViewController(vc as! UITabBarController, sender: vc)
+                }
+            }
+        }
+        else {
+            let alert = UIAlertController(title: "Sorry", message: "You need to fill in every field.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+    }
 }

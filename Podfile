@@ -11,5 +11,9 @@ target 'Round' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Parse'
+  pod 'ParseUI'
+  pod 'FBSDKCoreKit'
+  pod 'JSQMessagesViewController'
 end
 
