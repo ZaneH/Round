@@ -19,35 +19,13 @@ class UserSearchTableCell: UITableViewCell {
     
     @IBOutlet var name: UILabel!
     
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var personLabel: UILabel!
+    @IBOutlet var creatorImg: UIImageView!
     
     weak var delegate: FriendSearchTableViewCellDelegate?
     
-    var user: PFUser? {
-        
-        /*var first = String(user!["firstName"])
-         var last = String (user!["lastName"])*/
-        
-        didSet {
-            //name.text = "\(user!["firstName"]) \(user!["lastName"])"
-            
-            name.text = "hello woirld"
-            
-//            let current = PFUser.currentUser()
-//            
-//            if(name.text == "\(current!["firstName"]) \(current!["lastName"])")
-//            {
-//                
-//                self.backgroundColor = UIColor(red: 241/255, green: 73/255, blue: 97/255, alpha: 1)
-//                name.textColor = UIColor.whiteColor()
-//            }
-//            else {
-//                self.backgroundColor = UIColor.whiteColor()
-//                name.textColor = UIColor(red: 241/255, green: 73/255, blue: 97/255, alpha: 1)
-//                
-//            }
-            
-        }
-    }
     var location: PFObject? {
         
         /*var first = String(user!["firstName"])
@@ -55,7 +33,10 @@ class UserSearchTableCell: UITableViewCell {
         
         didSet {
             name.text = "\(location!["Name"])"
-            
+            dateLabel.text = "June 14, 2014"
+            timeLabel.text = "10:00 am"
+            personLabel.text = "\(location!["creatorName"])"
+
         }
     }
     

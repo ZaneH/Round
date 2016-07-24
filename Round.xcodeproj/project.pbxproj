@@ -12,7 +12,7 @@
 		180745A21D4499C3000A35AA /* DistanceFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807459F1D4499C3000A35AA /* DistanceFormula.swift */; };
 		180745A31D4499C3000A35AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180745A01D4499C3000A35AA /* Constants.swift */; };
 		1843F6921D43E11E0091AD14 /* VarelaRound-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1843F6911D43E11E0091AD14 /* VarelaRound-Regular.otf */; };
-		186E90451D44E528002932FF /* MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90441D44E528002932FF /* MainViewTableViewCell.swift */; };
+		186E90451D44E528002932FF /* EventTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90441D44E528002932FF /* EventTableCellTableViewCell.swift */; };
 		186E90481D44F5B8002932FF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90471D44F5B8002932FF /* UserProfileViewController.swift */; };
 		18C558F51D4437DD00488371 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C558F41D4437DD00488371 /* Security.framework */; };
 		18C559021D4438FE00488371 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C558FE1D4438FE00488371 /* SSKeychain.h */; };
@@ -55,7 +55,7 @@
 		1807459F1D4499C3000A35AA /* DistanceFormula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFormula.swift; sourceTree = "<group>"; };
 		180745A01D4499C3000A35AA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1843F6911D43E11E0091AD14 /* VarelaRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.otf"; sourceTree = "<group>"; };
-		186E90441D44E528002932FF /* MainViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewTableViewCell.swift; sourceTree = "<group>"; };
+		186E90441D44E528002932FF /* EventTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		186E90471D44F5B8002932FF /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		18C558F41D4437DD00488371 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		18C558FE1D4438FE00488371 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				186E90471D44F5B8002932FF /* UserProfileViewController.swift */,
+				18C559161D447C7F00488371 /* MainViewController.swift */,
+				186E90441D44E528002932FF /* EventTableCellTableViewCell.swift */,
 				18C5590C1D44717900488371 /* UserSearchTableCell.swift */,
 			);
 			name = SearchView;
@@ -219,13 +221,11 @@
 			isa = PBXGroup;
 			children = (
 				186E90461D44F56A002932FF /* SearchView */,
-				18C559161D447C7F00488371 /* MainViewController.swift */,
 				1807459C1D448003000A35AA /* SplashViewController.swift */,
 				18C559101D4474E600488371 /* MessagesViewController.swift */,
 				2F27A2FE1D43610600EBBBB7 /* SignUpViewController.swift */,
 				2F27A2FB1D435C9600EBBBB7 /* SignInViewController.swift */,
 				18D272FA1D440A20001AF7CC /* CreateEventViewController.swift */,
-				186E90441D44E528002932FF /* MainViewTableViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				TargetAttributes = {
 					2FA30A581D4358AF005DE72D = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = AY3UYD4VYW;
+						DevelopmentTeam = P5GLL4MC5D;
 					};
 				};
 			};
@@ -403,7 +403,7 @@
 				18C75D8F1D442A45002EEE51 /* GFGeoHashQuery.m in Sources */,
 				18C75D921D442A45002EEE51 /* GFQuery.m in Sources */,
 				180745A31D4499C3000A35AA /* Constants.swift in Sources */,
-				186E90451D44E528002932FF /* MainViewTableViewCell.swift in Sources */,
+				186E90451D44E528002932FF /* EventTableCellTableViewCell.swift in Sources */,
 				18C75D8D1D442A45002EEE51 /* GFGeoHash.m in Sources */,
 				18C75D881D442A45002EEE51 /* GeoFire.m in Sources */,
 				18C5590B1D446FA500488371 /* ParseHelper.swift in Sources */,
@@ -515,6 +515,8 @@
 			baseConfigurationReference = 47DE616FCC8BE58846B490E2 /* Pods-Round.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/Headers",
@@ -536,6 +538,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoundDevTeam.Round;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Debug;
@@ -545,6 +548,8 @@
 			baseConfigurationReference = 1E43B054A5C5792B755AB0EB /* Pods-Round.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/Headers",
@@ -566,6 +571,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoundDevTeam.Round;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Release;

@@ -16,6 +16,8 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     
      var locationManager = CLLocationManager()
     var locValue = CLLocation()
+    
+    @IBOutlet var datePick: UIDatePicker!
 
 
     @IBOutlet var descripField: UITextView!
@@ -44,7 +46,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         newEvent["location"] = locationValue
         newEvent["date"] = strDate
         
-        newEvent["creatorName"] = PFUser.currentUser()!["fullName"]
+        newEvent["creatorName"] = PFUser.currentUser()!["fullName"] as! String
         
        newEvent.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("Object has been saved.")
@@ -55,8 +57,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func cancelEvent(sender: AnyObject) {
     }
-    
-    let datePick = UIDatePicker()
     
     
     override func viewDidLoad() {
@@ -79,12 +79,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         let tap: UITapGestureRecognizer?
         tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap!)
-        
-        datePick.frame = CGRectMake(0, 0, screenSize.width*0.7, screenSize.height*0.2)
-        datePick.center = CGPointMake(screenSize.width*0.5, screenSize.height*0.55)
-        datePick.timeZone = NSTimeZone.localTimeZone()
-        datePick.backgroundColor = UIColor.whiteColor()
-        view.addSubview(datePick)
         
         
         createButton.layer.cornerRadius = 15
@@ -117,10 +111,9 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dismissView(sender: UIButton) {
+    @IBAction func dismissView() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
 
     /*
     // MARK: - Navigation

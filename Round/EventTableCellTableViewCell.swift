@@ -1,5 +1,5 @@
 //
-//  MainViewTableViewCell.swift
+//  EventTableCellTableViewCell.swift
 //  Round
 //
 //  Created by Skylar Thomas on 7/24/16.
@@ -8,23 +8,20 @@
 
 import UIKit
 
-<<<<<<< HEAD:Round/MainViewTableViewCell.swift
-class MainViewTableViewCell: UITableViewCell {
-=======
 class EventTableCellTableViewCell: UITableViewCell {
+    
     @IBOutlet var eventTitle: UILabel!
     @IBOutlet var eventDescription: UILabel!
->>>>>>> origin/master:Round/EventTableCellTableViewCell.swift
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

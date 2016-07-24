@@ -60,6 +60,10 @@ class UserProfileViewController: UIViewController {
         view.userInteractionEnabled = true
         viewBtn3.addGestureRecognizer(viewGestureRecognizer3)
         
+        let viewGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(self.dismissKeyboard))
+        view.userInteractionEnabled = true
+        viewBtn3.addGestureRecognizer(viewGestureRecognizer)
+        
         
 //        viewGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(UserProfileViewController.removeOverView(_:)))
 //        view.userInteractionEnabled = true
@@ -67,6 +71,21 @@ class UserProfileViewController: UIViewController {
 //        viewGestureRecognizer.enabled = false
         
     }
+    func goToFirst()
+    {
+        //self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("messageView"))!, animated: true, completion: nil)
+        self.performSegueWithIdentifier("toMessageView", sender: self)
+    }
+    
+    func goToSecond()
+    {
+        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("mainView"))!, animated: true, completion: nil)
+    }
+    func goToThird()
+    {
+        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("eventSearch"))!, animated: true, completion: nil)
+    }
+
     
     func dismissKeyboard() {
         view.endEditing(true)
@@ -320,6 +339,12 @@ extension UserProfileViewController: UITableViewDelegate {
         
         let location = self.locations![indexPath.row]
         print("clicked")
+        
+        func goToFirst()
+        {
+            //self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("messageView"))!, animated: true, completion: nil)
+            self.performSegueWithIdentifier("toMessageView", sender: self)
+        }
         
 //        if(flippedToUsers)
 //        {

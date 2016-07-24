@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Parse.initializeWithConfiguration(configuration)
         
-        //let loc1: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.794920, longitude: -122.394506)
-        //let loc2: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.776222, longitude: -122.418033)
-        //print("LOOK AT ME!!!! \n Distance: \(getMeterDistance(loc1, location2: loc2))")
+        let loc1: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.794920, longitude: -122.394506)
+        let loc2: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.776222, longitude: -122.418033)
+        print("LOOK AT ME!!!! \n Distance: \(getMeterDistance(loc1, location2: loc2))")
 
         
         //Set up storyboard
@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         startViewController = storyboard.instantiateViewControllerWithIdentifier("SplashViewController") as! UIViewController
+        
+        UINavigationBar.appearance().backgroundColor = colorWithHexString("#f16277")
 
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
