@@ -26,6 +26,9 @@ class SignUpViewController: UIViewController {
     }
     // let keyboard fall when push anywhere
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +79,7 @@ class SignUpViewController: UIViewController {
         user.email = email.text
         user["firstName"] = firstName.text
         user["lastName"] = lastName.text
-        user["fullName"] = "\(firstName!.text) \(lastName!.text)"
+        user["fullName"] = firstName.text! + " " + lastName.text!
         
         
         if username.text != "" && password.text != "" && email.text != "" && firstName.text != "" && lastName.text != "" {
@@ -94,7 +97,7 @@ class SignUpViewController: UIViewController {
                     // Hooray! Let them use the app now.
                     print("success")
                     let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("mainView")
-                    self.showViewController(vc as! UITabBarController, sender: vc)
+                    self.showViewController(vc as! UIViewController, sender: vc)
                 }
             }
         }

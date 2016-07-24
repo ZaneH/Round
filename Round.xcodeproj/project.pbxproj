@@ -11,14 +11,14 @@
 		180745A11D4499C3000A35AA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807459E1D4499C3000A35AA /* Location.swift */; };
 		180745A21D4499C3000A35AA /* DistanceFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807459F1D4499C3000A35AA /* DistanceFormula.swift */; };
 		180745A31D4499C3000A35AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180745A01D4499C3000A35AA /* Constants.swift */; };
-		180745A61D44A0FE000A35AA /* EventTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180745A51D44A0FE000A35AA /* EventTableCellTableViewCell.swift */; };
 		1843F6921D43E11E0091AD14 /* VarelaRound-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1843F6911D43E11E0091AD14 /* VarelaRound-Regular.otf */; };
+		186E90451D44E528002932FF /* MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90441D44E528002932FF /* MainViewTableViewCell.swift */; };
+		186E90481D44F5B8002932FF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90471D44F5B8002932FF /* UserProfileViewController.swift */; };
 		18C558F51D4437DD00488371 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C558F41D4437DD00488371 /* Security.framework */; };
 		18C559021D4438FE00488371 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C558FE1D4438FE00488371 /* SSKeychain.h */; };
 		18C559031D4438FE00488371 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C558FF1D4438FE00488371 /* SSKeychain.m */; };
 		18C559041D4438FE00488371 /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C559001D4438FE00488371 /* SSKeychainQuery.h */; };
 		18C559051D4438FE00488371 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C559011D4438FE00488371 /* SSKeychainQuery.m */; };
-		18C559091D446E5200488371 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C559081D446E5200488371 /* EventSearchViewController.swift */; };
 		18C5590B1D446FA500488371 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5590A1D446FA500488371 /* ParseHelper.swift */; };
 		18C5590D1D44717900488371 /* UserSearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5590C1D44717900488371 /* UserSearchTableCell.swift */; };
 		18C559111D4474E600488371 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C559101D4474E600488371 /* MessagesViewController.swift */; };
@@ -54,14 +54,14 @@
 		1807459E1D4499C3000A35AA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1807459F1D4499C3000A35AA /* DistanceFormula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFormula.swift; sourceTree = "<group>"; };
 		180745A01D4499C3000A35AA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		180745A51D44A0FE000A35AA /* EventTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		1843F6911D43E11E0091AD14 /* VarelaRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.otf"; sourceTree = "<group>"; };
+		186E90441D44E528002932FF /* MainViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewTableViewCell.swift; sourceTree = "<group>"; };
+		186E90471D44F5B8002932FF /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		18C558F41D4437DD00488371 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		18C558FE1D4438FE00488371 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		18C558FF1D4438FE00488371 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		18C559001D4438FE00488371 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		18C559011D4438FE00488371 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		18C559081D446E5200488371 /* EventSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
 		18C5590A1D446FA500488371 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		18C5590C1D44717900488371 /* UserSearchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableCell.swift; sourceTree = "<group>"; };
 		18C559101D4474E600488371 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +127,15 @@
 				18C5590A1D446FA500488371 /* ParseHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		186E90461D44F56A002932FF /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				186E90471D44F5B8002932FF /* UserProfileViewController.swift */,
+				18C5590C1D44717900488371 /* UserSearchTableCell.swift */,
+			);
+			name = SearchView;
 			sourceTree = "<group>";
 		};
 		18C75D771D442A45002EEE51 /* GeoFire */ = {
@@ -209,15 +218,14 @@
 		2FA30A701D4359D8005DE72D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				186E90461D44F56A002932FF /* SearchView */,
 				18C559161D447C7F00488371 /* MainViewController.swift */,
 				1807459C1D448003000A35AA /* SplashViewController.swift */,
 				18C559101D4474E600488371 /* MessagesViewController.swift */,
-				18C5590C1D44717900488371 /* UserSearchTableCell.swift */,
 				2F27A2FE1D43610600EBBBB7 /* SignUpViewController.swift */,
 				2F27A2FB1D435C9600EBBBB7 /* SignInViewController.swift */,
 				18D272FA1D440A20001AF7CC /* CreateEventViewController.swift */,
-				18C559081D446E5200488371 /* EventSearchViewController.swift */,
-				180745A51D44A0FE000A35AA /* EventTableCellTableViewCell.swift */,
+				186E90441D44E528002932FF /* MainViewTableViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -380,15 +388,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C559111D4474E600488371 /* MessagesViewController.swift in Sources */,
-				180745A61D44A0FE000A35AA /* EventTableCellTableViewCell.swift in Sources */,
 				2F27A2FF1D43610600EBBBB7 /* SignUpViewController.swift in Sources */,
 				180745A21D4499C3000A35AA /* DistanceFormula.swift in Sources */,
 				18C5590D1D44717900488371 /* UserSearchTableCell.swift in Sources */,
 				1807459D1D448003000A35AA /* SplashViewController.swift in Sources */,
 				180745A11D4499C3000A35AA /* Location.swift in Sources */,
-				18C559091D446E5200488371 /* EventSearchViewController.swift in Sources */,
 				18C559051D4438FE00488371 /* SSKeychainQuery.m in Sources */,
 				2F27A2FC1D435C9600EBBBB7 /* SignInViewController.swift in Sources */,
+				186E90481D44F5B8002932FF /* UserProfileViewController.swift in Sources */,
 				18C75D8A1D442A45002EEE51 /* GFBase32Utils.m in Sources */,
 				18C559171D447C7F00488371 /* MainViewController.swift in Sources */,
 				2FA30A5D1D4358AF005DE72D /* AppDelegate.swift in Sources */,
@@ -396,6 +403,7 @@
 				18C75D8F1D442A45002EEE51 /* GFGeoHashQuery.m in Sources */,
 				18C75D921D442A45002EEE51 /* GFQuery.m in Sources */,
 				180745A31D4499C3000A35AA /* Constants.swift in Sources */,
+				186E90451D44E528002932FF /* MainViewTableViewCell.swift in Sources */,
 				18C75D8D1D442A45002EEE51 /* GFGeoHash.m in Sources */,
 				18C75D881D442A45002EEE51 /* GeoFire.m in Sources */,
 				18C5590B1D446FA500488371 /* ParseHelper.swift in Sources */,

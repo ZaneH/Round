@@ -16,34 +16,36 @@ protocol FriendSearchTableViewCellDelegate: class {
 
 
 class UserSearchTableCell: UITableViewCell {
-
+    
     @IBOutlet var name: UILabel!
-   
+    
     
     weak var delegate: FriendSearchTableViewCellDelegate?
     
     var user: PFUser? {
         
         /*var first = String(user!["firstName"])
-        var last = String (user!["lastName"])*/
+         var last = String (user!["lastName"])*/
         
         didSet {
-            name.text = "\(user!["firstName"]) \(user!["lastName"])"
+            //name.text = "\(user!["firstName"]) \(user!["lastName"])"
             
-            let current = PFUser.currentUser()
+            name.text = "hello woirld"
             
-            if(name.text == "\(current!["firstName"]) \(current!["lastName"])")
-            {
-                
-                self.backgroundColor = UIColor(red: 241/255, green: 73/255, blue: 97/255, alpha: 1)
-                name.textColor = UIColor.whiteColor()
-            }
-            else {
-                self.backgroundColor = UIColor.whiteColor()
-                name.textColor = UIColor(red: 241/255, green: 73/255, blue: 97/255, alpha: 1)
-                
-            }
-
+//            let current = PFUser.currentUser()
+//            
+//            if(name.text == "\(current!["firstName"]) \(current!["lastName"])")
+//            {
+//                
+//                self.backgroundColor = UIColor(red: 241/255, green: 73/255, blue: 97/255, alpha: 1)
+//                name.textColor = UIColor.whiteColor()
+//            }
+//            else {
+//                self.backgroundColor = UIColor.whiteColor()
+//                name.textColor = UIColor(red: 241/255, green: 73/255, blue: 97/255, alpha: 1)
+//                
+//            }
+            
         }
     }
     var location: PFObject? {
@@ -52,7 +54,7 @@ class UserSearchTableCell: UITableViewCell {
          var last = String (user!["lastName"])*/
         
         didSet {
-            name.text = "\(location!["address"])"
+            name.text = "\(location!["Name"])"
             
         }
     }
@@ -64,8 +66,8 @@ class UserSearchTableCell: UITableViewCell {
              it is possible to follow a user.
              */
             /*if let canFollow = canFollow {
-                settingsBtn.selected = !canFollow
-            }*/
+             settingsBtn.selected = !canFollow
+             }*/
         }
     }
     
@@ -74,19 +76,19 @@ class UserSearchTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-       
         
-//        var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("cellTapped:"))
-//        self.userInteractionEnabled = true
-//        self.addGestureRecognizer(tapGestureRecognizer)
         
-        }
+        //        var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("cellTapped:"))
+        //        self.userInteractionEnabled = true
+        //        self.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
     
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

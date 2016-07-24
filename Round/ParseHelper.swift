@@ -23,6 +23,9 @@ class ParseHelper {
     
     static let ParseAddress = "address"
     
+    static let ParseLocationName = "Name"
+    static let ParseCreator = "creatorName"
+    
     
     
     static func getUserArray(completionBlock: PFQueryArrayResultBlock){
@@ -30,17 +33,6 @@ class ParseHelper {
         
         query.findObjectsInBackgroundWithBlock(completionBlock)
 
-    }
-    
-    static func getUsersAtHomeArray(completionBlock: PFQueryArrayResultBlock){
-        let query = PFQuery(className: "hpePresentUsers")
-         query.whereKey("atHome", equalTo: "YES")
-        query.findObjectsInBackgroundWithBlock(completionBlock)
-        
-        
-       // query.findObjectsInBackgroundWithBlock(completionBlock)
-    
-        
     }
     
     
@@ -54,64 +46,10 @@ class ParseHelper {
      
      :returns: The generated PFQuery
      */
-//    static func allUsers(completionBlock: PFQueryArrayResultBlock) -> PFQuery {
-//        let query = PFUser.query()!
-//        // exclude the current user
-//        //query.whereKey(ParseHelper.ParseUserUsername)
-//        query.orderByAscending(ParseHelper.ParseUserUsername)
-//        query.limit = 20
-//        
-//        query.findObjectsInBackgroundWithBlock(completionBlock)
-//        
-//        return query
-//    }
-    
-    /**
-     Fetch users whose usernames match the provided search term.
-     
-     :param: searchText The text that should be used to search for users
-     :param: completionBlock The completion block that is called when the query completes
-     
-     :returns: The generated PFQuery
-     */
-    static func searchLocations(searchText: String, completionBlock: PFQueryArrayResultBlock) -> PFQuery {
-        /*
-         NOTE: We are using a Regex to allow for a case insensitive compare of usernames.
-         Regex can be slow on large datasets. For large amount of data it's better to store
-         lowercased username in a separate column and perform a regular string compare.
-         */
-        
-        let query = PFQuery(className: "locations").whereKey(ParseHelper.ParseAddress,
-                                             matchesRegex: searchText, modifiers: "i")
-        
-        query.orderByAscending(ParseHelper.ParseAddress)
-        query.limit = 80
-        
-        query.findObjectsInBackgroundWithBlock(completionBlock)
-        
-        
-        return query
-    }
-    static func searchUsers(searchText: String, completionBlock: PFQueryArrayResultBlock) -> PFQuery {
-        /*
-         NOTE: We are using a Regex to allow for a case insensitive compare of usernames.
-         Regex can be slow on large datasets. For large amount of data it's better to store
-         lowercased username in a separate column and perform a regular string compare.
-         */
-        let query1 = PFUser.query()!.whereKey(ParseHelper.ParseUserUsername,
-                                              matchesRegex: searchText, modifiers: "i")
-        
-        let query2 = PFUser.query()!.whereKey(ParseHelper.ParseUserFirstName,
-                                              matchesRegex: searchText, modifiers: "i")
-        
-        let query3 = PFUser.query()!.whereKey(ParseHelper.ParseUserLastName,
-                                              matchesRegex: searchText, modifiers: "i")
-        
-        let query4 = PFUser.query()!.whereKey(ParseHelper.ParseFullName,
-                                              matchesRegex: searchText, modifiers: "i")
-        
-        let query = PFQuery.orQueryWithSubqueries([query1, query2, query3, query4])
-        
+    static func allUsers(completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+        let query = PFUser.query()!
+        // exclude the current user
+        //query.whereKey(ParseHelper.ParseUserUsername)
         query.orderByAscending(ParseHelper.ParseUserUsername)
         query.limit = 20
         
@@ -119,4 +57,51 @@ class ParseHelper {
         
         return query
     }
+    static func searchEvents(searchText: String, completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+        /*
+         NOTE: We are using a Regex to allow for a case insensitive compare of usernames.
+         Regex can be slow on large datasets. For large amount of data it's better to store
+         lowercased username in a separate column and perform a regular string compare.
+         */
+        
+        let query = PFQuery(className: "Events").whereKey(ParseHelper.ParseLocationName,
+                                                             matchesRegex: searchText, modifiers: "i")
+        
+        //let query = PFQuery.orQueryWithSubqueries([query1, query2])
+        
+        query.orderByAscending(ParseHelper.ParseLocationName) //order by closest
+        query.limit = 80
+        
+        query.findObjectsInBackgroundWithBlock(completionBlock)
+        
+        
+        return query
+    }
+//    static func searchUsers(searchText: String, completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+//        /*
+//         NOTE: We are using a Regex to allow for a case insensitive compare of usernames.
+//         Regex can be slow on large datasets. For large amount of data it's better to store
+//         lowercased username in a separate column and perform a regular string compare.
+//         */
+//        let query1 = PFUser.query()!.whereKey(ParseHelper.ParseUserUsername,
+//                                              matchesRegex: searchText, modifiers: "i")
+//        
+//        let query2 = PFUser.query()!.whereKey(ParseHelper.ParseUserFirstName,
+//                                              matchesRegex: searchText, modifiers: "i")
+//        
+//        let query3 = PFUser.query()!.whereKey(ParseHelper.ParseUserLastName,
+//                                              matchesRegex: searchText, modifiers: "i")
+//        
+//        let query4 = PFUser.query()!.whereKey(ParseHelper.ParseFullName,
+//                                              matchesRegex: searchText, modifiers: "i")
+//        
+//        let query = PFQuery.orQueryWithSubqueries([query1, query2, query3, query4])
+//        
+//        query.orderByAscending(ParseHelper.ParseUserUsername)
+//        query.limit = 20
+//        
+//        query.findObjectsInBackgroundWithBlock(completionBlock)
+//        
+//        return query
+//    }
 }

@@ -17,6 +17,9 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default;
+    }
     
     func dismissKeyboard() {
         view.endEditing(true)
@@ -31,17 +34,11 @@ class SignInViewController: UIViewController {
         view.addGestureRecognizer(tap!)
         
         
-        
         logInButton.layer.cornerRadius = 15
         logInButton.layer.backgroundColor = UIColor.whiteColor().CGColor
         logInButton.layer.borderWidth = 1.5
         logInButton.layer.borderColor = UIColor(colorLiteralRed: 135.0/255, green: 56.0/255, blue: 148.0/255, alpha: 1).CGColor
         logInButton.setTitleColor(UIColor(colorLiteralRed: 135.0/255, green: 56.0/255, blue: 148.0/255, alpha: 1), forState: UIControlState.Normal)
-        
-        
-        
-        
-        
         
         
         signUpButton.layer.cornerRadius = 15

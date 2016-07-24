@@ -1,5 +1,5 @@
 //
-//  EventTableCellTableViewCell.swift
+//  MainViewTableViewCell.swift
 //  Round
 //
 //  Created by Skylar Thomas on 7/24/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventTableCellTableViewCell: UITableViewCell {
+class MainViewTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

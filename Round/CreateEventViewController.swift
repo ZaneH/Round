@@ -33,8 +33,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
-        //var strDate = dateFormatter.stringFromDate(datePick.date)
-        
+        var strDate = dateFormatter.stringFromDate(datePick.date)
         let descrip = String(descripField.text)
         let locationValue = PFGeoPoint(location: Constants.locationManager.location)
         
@@ -43,6 +42,9 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         newEvent["Name"] = eventName
         newEvent["description"] = descrip
         newEvent["location"] = locationValue
+        newEvent["date"] = strDate
+        
+        newEvent["creatorName"] = PFUser.currentUser()!["fullName"]
         
        newEvent.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("Object has been saved.")
