@@ -10,16 +10,18 @@ import UIKit
 import Parse
 import CoreLocation
 
-class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate {
+class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var viewBtn1: UIView!
     @IBOutlet var viewBtn2: UIView!
-    
     @IBOutlet var viewBtn3: UIView!
     
     var viewGestureRecognizer1 = UITapGestureRecognizer()
     var viewGestureRecognizer2 = UITapGestureRecognizer()
     var viewGestureRecognizer3 = UITapGestureRecognizer()
+    
+    var names: [String] = []
+    var descriptions: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,6 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
         viewBtn3.addGestureRecognizer(viewGestureRecognizer3)
         
         //location shit
-
         Constants.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
@@ -50,18 +51,40 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
             Constants.locationManager.startUpdatingLocation()
         }
         
-        print("CLLocationManager enabled")
+        /*
+        PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+        // The find succeeded. The first 100 objects are available in objects
+        } else {
+        // Log details of the failure
+        NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        }];
+ */
         
+        let query: PFQuery = PFQuery(className: "Events")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error) in
+            if error == nil {
+                print(objects)
+                
+                for object in objects! {
+                    self.names.append(object["Name"] as! String)
+                    self.descriptions.append(object["description"] as! String)
+                }
+                
+                self.tableView.reloadData()
+                
+            } else {
+                print(error)
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func goToFirst()
     {
-        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("mainView"))!, animated: true, completion: nil)
+        //self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("messageView"))!, animated: true, completion: nil)
+        self.performSegueWithIdentifier("toMessageView", sender: self)
     }
     
     func goToSecond()
@@ -84,84 +107,18 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
         
     }
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     var user = PFUser.currentUser()
     
-    
     var usersArray: [PFUser] = []
-    
-    
-//    func fillUserArray() {
-//        usersArray = []
-//        
-//        let query = PFUser.query()!
-//        query.whereKey("atHome", equalTo: true)
-//        
-//        query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) in
-//            for user in objects! {
-//                self.usersArray.append((user as? PFUser)!) //fixed async
-//            }
-//        });
-//        
-//        tableView.reloadData()
-//    }
-    
-    
-//    func updateUserAtHome() {
-//        
-//        
-//        
-//        if user!["atHome"] as! Bool == true {
-//            //User is HOME!!!
-//            print("USER IS HOME")
-//            // Do we add him to the array??
-//            if !usersArray.contains(user!) {
-//                // Add to the array
-//                usersArray.append(user!)
-//                
-//                user?.saveInBackground()
-//                
-//                
-//                
-//            }
-//            else {
-//                // do nothing bc hes already in the array
-//            }
-//            
-//        }
-//            
-//        else {
-//            print("User is not home")
-//            
-//            //He is not home!!! Is he in the array??
-//            if usersArray.contains(user!) {
-//                // if he is, then take him out of the array
-//                usersArray.removeAtIndex(usersArray.indexOf(user!)!)
-//                user?.saveInBackground()
-//            }
-//            else {
-//                print("User is not home")
-//                // do nothing bc hes already out of the array
-//            }
-//            
-//        }
-//        tableView.reloadData()
-//    }
-    
     
     
     // MARK: - Table view data source
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 200
-        }
-        else {
-            return 70
-        }
+        return 82
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -171,80 +128,22 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, RETURN THE NUMBER OF ROWS
-        
-        
-        print("users in home: \(usersArray.count)")
-        
-        return usersArray.count + 1
+        if names.count < descriptions.count {
+            return names.count
+        } else {
+            return descriptions.count
+        }
     }
     
-    
-    
-    
-    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-////        if indexPath.row == 0 {
-////            let cell = tableView.dequeueReusableCellWithIdentifier("locationCell", forIndexPath: indexPath) as! EventTableCellTableViewCell
-////            
-////            let center = CLLocationCoordinate2D(latitude: Constants.myDormLocation.latitude, longitude: Constants.myDormLocation.longitude)
-////            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-////            
-////            let objectAnnotation = MKPointAnnotation()
-////            objectAnnotation.coordinate = center
-////            objectAnnotation.title = "HPE"
-////            cell.mapView.addAnnotation(objectAnnotation)
-////            
-////            
-////            cell.mapView.setRegion(region, animated: true)
-////            
-////            return cell
-////        }
-////        else {
-////            let cell: UserTableViewCell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath) as! UserTableViewCell
-////            
-////            let userAtHome = usersArray[indexPath.row - 1]
-////            
-////            if(userAtHome.username == PFUser.currentUser()?.username)
-////            {
-////                
-////                cell.layer.backgroundColor = UIColor(colorLiteralRed: 244.0/255, green: 100.0/255, blue: 118.0/255, alpha: 0.5).CGColor
-////                //cell.textLabel?.textColor = UIColor.whiteColor()
-////                cell.userFullNameLabel?.textColor = UIColor.whiteColor()
-////                
-////                //                let logOut = UITableViewRowAction(style: .Normal, title: "Log Out") { action, index in
-////                //                    print("log out button tapped")
-////                //                    PFUser.logOut()
-////                //
-////                //                }
-////                //                logOut.backgroundColor = UIColor.lightGrayColor()
-////                //                return[logOut]
-////            }
-////            
-////            // print("Index is at: \(indexPath.row - 1)")
-////            
-////            // edit label to full name of user
-////            let first = userAtHome["firstName"]
-////            let last = userAtHome["lastName"]
-////            
-////            
-////            
-////            cell.userFullNameLabel.text = String("\(first) \(last)")
-////            cell.profileImage2.image = UIImage(named: "round_logo")
-//        
-//            
-//            // return cell
-//            return cell
-//            
-//        }
-    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as! EventTableCellTableViewCell
+        cell.eventTitle.text = names[indexPath.row]
+        cell.eventDescription.text = descriptions[indexPath.row]
         
+        return cell
     }
-    
-    
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // the cells you would like the actions to appear needs to be editable
         return true
     }
     
@@ -258,3 +157,4 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
         // Pass the selected object to the new view controller.
     }
     */
+}

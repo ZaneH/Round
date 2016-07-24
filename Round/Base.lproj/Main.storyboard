@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,7 +7,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="VarelaRound-Regular.otf">
-            <string>VarelaRound</string>
             <string>VarelaRound</string>
             <string>VarelaRound</string>
             <string>VarelaRound</string>
@@ -390,6 +389,7 @@
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelEvent:" destination="XhE-JQ-Zup" eventType="touchUpInside" id="pST-v3-e6u"/>
+                                    <action selector="dismissView:" destination="XhE-JQ-Zup" eventType="touchUpInside" id="ftY-F8-mNk"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dto-hg-sMv">
@@ -874,70 +874,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhJ-nl-Bge">
-                                <rect key="frame" x="14" y="83" width="572" height="448"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="oxN-IP-eV2">
-                                        <rect key="frame" x="0.0" y="28" width="572" height="111"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oxN-IP-eV2" id="0DP-W8-uFa">
-                                            <rect key="frame" x="0.0" y="0.0" width="572" height="110.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcc-0G-pdg">
-                                                    <rect key="frame" x="13" y="20" width="454" height="28"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="374-jt-vFr"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="VarelaRound" family="Varela Round" pointSize="27"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-1M-f2x">
-                                                    <rect key="frame" x="13" y="50" width="454" height="28"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="Uzx-0E-qKY"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="VarelaRound" family="Varela Round" pointSize="11"/>
-                                                    <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tn-az-E22">
-                                                    <rect key="frame" x="13" y="70" width="454" height="28"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="cSO-zn-cYe"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="VarelaRound" family="Varela Round" pointSize="11"/>
-                                                    <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="btn1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0W-Gk-od6">
-                                                    <rect key="frame" x="414" y="20" width="72" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="56" id="7y6-WO-1bf"/>
-                                                        <constraint firstAttribute="width" constant="56" id="cCz-Hk-LdJ"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="nkO-1M-f2x" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="0wK-DI-KC1"/>
-                                                <constraint firstItem="Q0W-Gk-od6" firstAttribute="leading" secondItem="nkO-1M-f2x" secondAttribute="trailing" constant="24" id="3mM-RO-dGH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Q0W-Gk-od6" secondAttribute="trailing" constant="17" id="B4U-Lo-ULB"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Q0W-Gk-od6" secondAttribute="bottom" constant="18.5" id="Efy-ps-uZW"/>
-                                                <constraint firstItem="Xcc-0G-pdg" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="Hf0-hd-pU8"/>
-                                                <constraint firstItem="Q0W-Gk-od6" firstAttribute="leading" secondItem="2Tn-az-E22" secondAttribute="trailing" constant="24" id="Mdb-RF-lGy"/>
-                                                <constraint firstItem="Q0W-Gk-od6" firstAttribute="top" secondItem="0DP-W8-uFa" secondAttribute="topMargin" constant="20" id="OmA-Bh-LdP"/>
-                                                <constraint firstItem="2Tn-az-E22" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="Pa7-iM-40l"/>
-                                                <constraint firstItem="Xcc-0G-pdg" firstAttribute="top" secondItem="0DP-W8-uFa" secondAttribute="topMargin" constant="12" id="ee9-hp-Ev4"/>
-                                                <constraint firstItem="Q0W-Gk-od6" firstAttribute="leading" secondItem="Xcc-0G-pdg" secondAttribute="trailing" constant="24" id="fud-74-HkU"/>
-                                                <constraint firstItem="nkO-1M-f2x" firstAttribute="top" secondItem="Xcc-0G-pdg" secondAttribute="bottom" constant="2" id="qKk-UP-zyp"/>
-                                                <constraint firstItem="2Tn-az-E22" firstAttribute="top" secondItem="nkO-1M-f2x" secondAttribute="bottom" constant="-8" id="t5l-Ik-0Ui"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knb-sj-JEf">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
                                 <subviews>
@@ -972,6 +908,80 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jhJ-nl-Bge">
+                                <rect key="frame" x="14" y="85" width="572" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="82" id="oxN-IP-eV2" customClass="EventTableCellTableViewCell" customModule="Round" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="572" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oxN-IP-eV2" id="0DP-W8-uFa">
+                                            <rect key="frame" x="0.0" y="0.0" width="572" height="81.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcc-0G-pdg">
+                                                    <rect key="frame" x="13" y="8" width="551" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="374-jt-vFr"/>
+                                                        <constraint firstAttribute="height" constant="28" id="Vnh-H4-e0O"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="VarelaRound" family="Varela Round" pointSize="27"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="374-jt-vFr"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tn-az-E22">
+                                                    <rect key="frame" x="13" y="44" width="551" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="cSO-zn-cYe"/>
+                                                        <constraint firstAttribute="height" constant="28" id="sM8-F3-10d"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="VarelaRound" family="Varela Round" pointSize="14"/>
+                                                    <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="cSO-zn-cYe"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xcc-0G-pdg" secondAttribute="trailing" id="A0y-rE-i7f"/>
+                                                <constraint firstItem="Xcc-0G-pdg" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="Hf0-hd-pU8"/>
+                                                <constraint firstItem="Xcc-0G-pdg" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="Lga-mY-qfY"/>
+                                                <constraint firstItem="2Tn-az-E22" firstAttribute="top" secondItem="Xcc-0G-pdg" secondAttribute="bottom" constant="8" id="OJU-Qc-IRl"/>
+                                                <constraint firstItem="2Tn-az-E22" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="Pa7-iM-40l"/>
+                                                <constraint firstItem="2Tn-az-E22" firstAttribute="leading" secondItem="0DP-W8-uFa" secondAttribute="leadingMargin" constant="5" id="YAW-lK-cM5"/>
+                                                <constraint firstItem="Xcc-0G-pdg" firstAttribute="top" secondItem="0DP-W8-uFa" secondAttribute="topMargin" constant="12" id="ee9-hp-Ev4"/>
+                                                <constraint firstAttribute="topMargin" secondItem="Xcc-0G-pdg" secondAttribute="top" id="ig0-Ve-rft"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2Tn-az-E22" secondAttribute="trailing" id="pUi-QT-cCc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2Tn-az-E22" secondAttribute="bottom" constant="1.5" id="wvo-ns-DUC"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Hf0-hd-pU8"/>
+                                                    <exclude reference="ee9-hp-Ev4"/>
+                                                    <exclude reference="Pa7-iM-40l"/>
+                                                    <exclude reference="wvo-ns-DUC"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventDescription" destination="2Tn-az-E22" id="p3D-vF-fAN"/>
+                                            <outlet property="eventTitle" destination="Xcc-0G-pdg" id="Z9a-UY-qEP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Hj-VV-QYA" id="rsQ-sN-dyN"/>
+                                    <outlet property="delegate" destination="6Hj-VV-QYA" id="IJw-gz-jYY"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1024,14 +1034,57 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="jhJ-nl-Bge" id="CcY-fd-rus"/>
                         <outlet property="viewBtn1" destination="efh-f8-pve" id="9zR-0n-577"/>
                         <outlet property="viewBtn2" destination="4g2-cj-DaS" id="hYg-Tq-Gpl"/>
                         <outlet property="viewBtn3" destination="trY-oe-4rq" id="UO8-CP-NwE"/>
+                        <segue destination="mkQ-NR-SfN" kind="show" identifier="toMessageView" id="AA6-xM-uKQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEQ-lZ-YH4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968" y="202"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="R2G-Yd-wQ7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3I-yw-xny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="messageView" id="t93-Op-aW7" customClass="MessagesViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dey-q6-Cjc"/>
+                        <viewControllerLayoutGuide type="bottom" id="uga-4g-PIX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cDh-7V-AdS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Hw-hb-WJ9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Izf-iW-obD">
+                            <connections>
+                                <segue destination="6Hj-VV-QYA" kind="custom" customClass="DismissSegue" id="hXk-a4-Pk9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1665" y="929"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dhY-NS-DKe">
+            <objects>
+                <navigationController id="mkQ-NR-SfN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Goa-Z8-3Kk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t93-Op-aW7" kind="relationship" relationship="rootViewController" id="S6x-az-Myp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38W-5c-tQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="929"/>
         </scene>
     </scenes>
     <resources>

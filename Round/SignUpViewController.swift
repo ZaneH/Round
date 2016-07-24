@@ -94,7 +94,7 @@ class SignUpViewController: UIViewController {
                     // Hooray! Let them use the app now.
                     print("success")
                     let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("mainView")
-                    self.showViewController(vc as! UITabBarController, sender: vc)
+                    self.showViewController(vc as! UIViewController, sender: vc)
                 }
             }
         }
