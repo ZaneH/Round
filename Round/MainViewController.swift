@@ -109,10 +109,6 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
     
     @IBOutlet weak var tableView: UITableView!
     
-    var user = PFUser.currentUser()
-    
-    var usersArray: [PFUser] = []
-    
     
     // MARK: - Table view data source
     

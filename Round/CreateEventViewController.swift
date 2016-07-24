@@ -12,10 +12,12 @@ import Parse
 let screenSize: CGRect = UIScreen.mainScreen().bounds
 
 
-class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
+class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate {
     
      var locationManager = CLLocationManager()
     var locValue = CLLocation()
+    
+    var hasEnteredBefore = Bool(false)
     
     @IBOutlet var datePick: UIDatePicker!
 
@@ -30,6 +32,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         
         var eventName = nameTextField.text!
         var dateFormatter = NSDateFormatter()
+        
     
         
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
@@ -58,10 +61,20 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func cancelEvent(sender: AnyObject) {
     }
     
+    func textViewDidBeginEditing(textView: UITextView)
+    {
+        if !hasEnteredBefore {
+            hasEnteredBefore = !hasEnteredBefore
+        textView.text = ""
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         descripField.delegate = self
         
         self.locationManager.requestAlwaysAuthorization()
         

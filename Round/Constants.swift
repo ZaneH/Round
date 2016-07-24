@@ -11,10 +11,6 @@ import MapKit
 
 
 
-
-
-
-
 class Constants {
    static var myLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: Constants.myLocation.latitude, longitude: Constants.myLocation.longitude)
     static var myDormLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.773510, longitude: -122.417805)

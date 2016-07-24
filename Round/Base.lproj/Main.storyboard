@@ -374,7 +374,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Qjt-lE-Jae"/>
                                 </constraints>
-                                <color key="textColor" red="0.71372549019607845" green="0.71372549019607845" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.77404415885006872" green="0.77609007227627935" blue="0.80731043506544709" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="VarelaRound" family="Varela Round" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

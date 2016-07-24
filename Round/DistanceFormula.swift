@@ -26,7 +26,7 @@ func getMeterDistance(location1: CLLocationCoordinate2D, location2: CLLocationCo
     let location2CL: CLLocation = CLLocation(latitude: location2.latitude, longitude: location2.longitude)
     
     let distance = location1CL.distanceFromLocation(location2CL)
-    print("distance")
+    
     return distance
 }
 

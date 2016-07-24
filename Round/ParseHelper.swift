@@ -25,6 +25,7 @@ class ParseHelper {
     
     static let ParseLocationName = "Name"
     static let ParseCreator = "creatorName"
+    static let ParseDateMade = "createdAt"
     
     
     
@@ -64,10 +65,30 @@ class ParseHelper {
          lowercased username in a separate column and perform a regular string compare.
          */
         
-        let query = PFQuery(className: "Events").whereKey(ParseHelper.ParseLocationName,
+        let query1 = PFQuery(className: "Events").whereKey(ParseHelper.ParseLocationName,
                                                              matchesRegex: searchText, modifiers: "i")
         
-        //let query = PFQuery.orQueryWithSubqueries([query1, query2])
+        let query2 = PFQuery(className: "Events").whereKey(ParseHelper.ParseCreator,
+                                                           matchesRegex: searchText, modifiers: "i")
+        
+        let query = PFQuery.orQueryWithSubqueries([query1, query2])
+        
+        query.orderByAscending(ParseHelper.ParseLocationName) //order by closest
+        query.limit = 80
+        
+        query.findObjectsInBackgroundWithBlock(completionBlock)
+        
+        
+        return query
+    }
+    static func searchEventsByLoc(searchText: String, completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+        /*
+         NOTE: We are using a Regex to allow for a case insensitive compare of usernames.
+         Regex can be slow on large datasets. For large amount of data it's better to store
+         lowercased username in a separate column and perform a regular string compare.
+         */
+        
+        let query = PFQuery(className: "Events")
         
         query.orderByAscending(ParseHelper.ParseLocationName) //order by closest
         query.limit = 80
