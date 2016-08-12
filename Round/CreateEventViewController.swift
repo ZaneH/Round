@@ -33,14 +33,25 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         var eventName = nameTextField.text!
         var dateFormatter = NSDateFormatter()
         
-    
+        var dateFormatter2 = NSDateFormatter()
+        
         
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .NoStyle
         
-        var strDate = dateFormatter.stringFromDate(datePick.date)
+        dateFormatter2.timeStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter2.dateStyle = .NoStyle
+        
+        print(dateFormatter.stringFromDate(datePick.date))
+        print(dateFormatter2.stringFromDate(datePick.date))
+        
+        let strDate = dateFormatter.stringFromDate(datePick.date)
+        let strTime  = dateFormatter2.stringFromDate(datePick.date)
+        
         let descrip = String(descripField.text)
         let locationValue = PFGeoPoint(location: Constants.locationManager.location)
+        
+        print(dateFormatter.dateStyle)
         
         //save event
         let newEvent = PFObject(className: "Events")
@@ -48,11 +59,14 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         newEvent["description"] = descrip
         newEvent["location"] = locationValue
         newEvent["date"] = strDate
+        newEvent["time"] = strTime
         
-        newEvent["creatorName"] = PFUser.currentUser()!["fullName"] as! String
+        newEvent["creatorName"] = PFUser.currentUser()!["fullName"]
         
        newEvent.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("Object has been saved.")
+        
+         self.performSegueWithIdentifier("dismissCreate", sender: self)
         }
         
     }

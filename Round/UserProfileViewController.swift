@@ -48,21 +48,21 @@ class UserProfileViewController: UIViewController {
 //        profileView.layer.cornerRadius = 8
 //        profileView.hidden = true;
         
-        viewGestureRecognizer1 = UITapGestureRecognizer(target:self, action:#selector(MainViewController.goToFirst))
+        viewGestureRecognizer1 = UITapGestureRecognizer(target:self, action:#selector(self.goToFirst))
         view.userInteractionEnabled = true
         viewBtn1.addGestureRecognizer(viewGestureRecognizer1)
         
-        viewGestureRecognizer2 = UITapGestureRecognizer(target:self, action:#selector(MainViewController.goToSecond))
+        viewGestureRecognizer2 = UITapGestureRecognizer(target:self, action:#selector(self.goToSecond))
         view.userInteractionEnabled = true
         viewBtn2.addGestureRecognizer(viewGestureRecognizer2)
         
-        viewGestureRecognizer3 = UITapGestureRecognizer(target:self, action:#selector(MainViewController.goToThird))
+        viewGestureRecognizer3 = UITapGestureRecognizer(target:self, action:#selector(self.goToThird))
         view.userInteractionEnabled = true
         viewBtn3.addGestureRecognizer(viewGestureRecognizer3)
         
         let viewGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(self.dismissKeyboard))
         view.userInteractionEnabled = true
-        viewBtn3.addGestureRecognizer(viewGestureRecognizer)
+        view.addGestureRecognizer(viewGestureRecognizer)
         
         
 //        viewGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(UserProfileViewController.removeOverView(_:)))
@@ -71,19 +71,21 @@ class UserProfileViewController: UIViewController {
 //        viewGestureRecognizer.enabled = false
         
     }
+    
+    //change these later to segues
     func goToFirst()
     {
         //self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("messageView"))!, animated: true, completion: nil)
-        self.performSegueWithIdentifier("toMessageView", sender: self)
+        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("messageView"))!, animated: false, completion: nil)
     }
     
     func goToSecond()
     {
-        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("mainView"))!, animated: true, completion: nil)
+        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("mainView"))!, animated: false, completion: nil)
     }
     func goToThird()
     {
-        self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("eventSearch"))!, animated: true, completion: nil)
+        //self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("eventSearch"))!, animated: true, completion: nil)
     }
 
     
@@ -426,14 +428,24 @@ extension UserProfileViewController: UISearchBarDelegate, UITextFieldDelegate {
 //    
     func textFieldDidBeginEditing(textField: UITextField) {
         ParseHelper.searchEvents(textField.text!) { (objects: [PFObject]?, error) in
-            self.state = .SearchMode;
-            self.updateList(objects, error: error);
+            
+            if textField.text! != ""
+            {
+                self.state = .SearchMode;
+                self.updateList(objects, error: error);
+            }
         }
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         ParseHelper.searchEvents(textField.text!) { (objects: [PFObject]?, error) in
-            self.updateList(objects, error: error);
+            
+            if textField.text! != ""
+            {
+                 self.updateList(objects, error: error);
+            }
+           
+            
         }
         
         return true;
@@ -477,10 +489,6 @@ extension UserProfileViewController: FriendSearchTableViewCellDelegate {
 //            // update local cache
 //            self.followingUsers = followingUsers.filter({$0 != user})
 //        }
-    }
-    
-    @IBAction func dismissView() {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*

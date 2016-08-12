@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2FA30A581D4358AF005DE72D"
-               BuildableName = "Round.app"
+               BuildableName = "round.temp_caseinsensitive_rename.app"
                BlueprintName = "Round"
-               ReferencedContainer = "container:Round.xcodeproj">
+               ReferencedContainer = "container:round.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FA30A581D4358AF005DE72D"
-            BuildableName = "Round.app"
+            BuildableName = "round.temp_caseinsensitive_rename.app"
             BlueprintName = "Round"
-            ReferencedContainer = "container:Round.xcodeproj">
+            ReferencedContainer = "container:round.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FA30A581D4358AF005DE72D"
-            BuildableName = "Round.app"
+            BuildableName = "round.temp_caseinsensitive_rename.app"
             BlueprintName = "Round"
-            ReferencedContainer = "container:Round.xcodeproj">
+            ReferencedContainer = "container:round.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FA30A581D4358AF005DE72D"
-            BuildableName = "Round.app"
+            BuildableName = "round.temp_caseinsensitive_rename.app"
             BlueprintName = "Round"
-            ReferencedContainer = "container:Round.xcodeproj">
+            ReferencedContainer = "container:round.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

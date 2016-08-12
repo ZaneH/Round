@@ -11,7 +11,7 @@ import Parse
 import CoreLocation
 
 class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet var viewBtn1: UIView!
     @IBOutlet var viewBtn2: UIView!
     @IBOutlet var viewBtn3: UIView!
@@ -25,7 +25,7 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         viewGestureRecognizer1 = UITapGestureRecognizer(target:self, action:#selector(MainViewController.goToFirst))
         view.userInteractionEnabled = true
@@ -52,16 +52,16 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
         }
         
         /*
-         PFQuery *query = [PFQuery queryWithClassName:@"Events"];
-         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-         if (!error) {
-         // The find succeeded. The first 100 objects are available in objects
-         } else {
-         // Log details of the failure
-         NSLog(@"Error: %@ %@", error, [error userInfo]);
-         }
-         }];
-         */
+        PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+        // The find succeeded. The first 100 objects are available in objects
+        } else {
+        // Log details of the failure
+        NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        }];
+ */
         
         let query: PFQuery = PFQuery(className: "Events")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error) in
@@ -73,14 +73,14 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
                     self.descriptions.append(object["description"] as! String)
                 }
                 
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
                 
             } else {
                 print(error)
             }
         }
     }
-    
+
     func goToFirst()
     {
         //self.presentViewController((self.storyboard?.instantiateViewControllerWithIdentifier("messageView"))!, animated: true, completion: nil)
@@ -109,12 +109,16 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
     
     @IBOutlet weak var tableView: UITableView!
     
+    var user = PFUser.currentUser()
+    
+    var usersArray: [PFUser] = []
+    
     
     // MARK: - Table view data source
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 82
+        return 111
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -143,14 +147,14 @@ class MainViewController : UIViewController, CLLocationManagerDelegate, MKMapVie
         return true
     }
     
-    
+
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 }

@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Round.xcodeproj">
+      location = "group:/Users/apple/Desktop/Round - Project/round15_Hackathon/round.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../round15_Hackathon/round.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

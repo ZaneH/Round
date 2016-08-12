@@ -32,9 +32,11 @@ class UserSearchTableCell: UITableViewCell {
          var last = String (user!["lastName"])*/
         
         didSet {
+            //let date1 = location!["date"].substringWithRange(Range<String.Index>(start: location!["date"].startIndex, end: location!["date"].endIndex.advancedBy(-6)))
+            
             name.text = "\(location!["Name"])"
-            dateLabel.text = "June 14, 2014"
-            timeLabel.text = "10:00 am"
+            dateLabel.text = "\(location!["date"])"
+            timeLabel.text = "\(location!["time"])"
             personLabel.text = "\(location!["creatorName"])"
 
         }
@@ -64,6 +66,7 @@ class UserSearchTableCell: UITableViewCell {
         //        self.addGestureRecognizer(tapGestureRecognizer)
         
     }
+    
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

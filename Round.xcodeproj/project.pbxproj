@@ -14,6 +14,7 @@
 		1843F6921D43E11E0091AD14 /* VarelaRound-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1843F6911D43E11E0091AD14 /* VarelaRound-Regular.otf */; };
 		186E90451D44E528002932FF /* EventTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90441D44E528002932FF /* EventTableCellTableViewCell.swift */; };
 		186E90481D44F5B8002932FF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E90471D44F5B8002932FF /* UserProfileViewController.swift */; };
+		18C520661D455633002F30C7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C520651D455633002F30C7 /* MainViewController.swift */; };
 		18C558F51D4437DD00488371 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C558F41D4437DD00488371 /* Security.framework */; };
 		18C559021D4438FE00488371 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C558FE1D4438FE00488371 /* SSKeychain.h */; };
 		18C559031D4438FE00488371 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C558FF1D4438FE00488371 /* SSKeychain.m */; };
@@ -22,7 +23,6 @@
 		18C5590B1D446FA500488371 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5590A1D446FA500488371 /* ParseHelper.swift */; };
 		18C5590D1D44717900488371 /* UserSearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5590C1D44717900488371 /* UserSearchTableCell.swift */; };
 		18C559111D4474E600488371 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C559101D4474E600488371 /* MessagesViewController.swift */; };
-		18C559171D447C7F00488371 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C559161D447C7F00488371 /* MainViewController.swift */; };
 		18C75D331D44281D002EEE51 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C75D2C1D4426B3002EEE51 /* Bridging-Header.h */; };
 		18C75D861D442A45002EEE51 /* GeoFire+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C75D781D442A45002EEE51 /* GeoFire+Private.h */; };
 		18C75D871D442A45002EEE51 /* GeoFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C75D791D442A45002EEE51 /* GeoFire.h */; };
@@ -57,6 +57,7 @@
 		1843F6911D43E11E0091AD14 /* VarelaRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.otf"; sourceTree = "<group>"; };
 		186E90441D44E528002932FF /* EventTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		186E90471D44F5B8002932FF /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		18C520651D455633002F30C7 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18C558F41D4437DD00488371 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		18C558FE1D4438FE00488371 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		18C558FF1D4438FE00488371 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		18C5590A1D446FA500488371 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		18C5590C1D44717900488371 /* UserSearchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableCell.swift; sourceTree = "<group>"; };
 		18C559101D4474E600488371 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		18C559161D447C7F00488371 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18C75D2C1D4426B3002EEE51 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		18C75D781D442A45002EEE51 /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
 		18C75D791D442A45002EEE51 /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		1E43B054A5C5792B755AB0EB /* Pods-Round.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Round.release.xcconfig"; path = "Pods/Target Support Files/Pods-Round/Pods-Round.release.xcconfig"; sourceTree = "<group>"; };
 		2F27A2FB1D435C9600EBBBB7 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2F27A2FE1D43610600EBBBB7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		2FA30A591D4358AF005DE72D /* Round.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Round.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA30A591D4358AF005DE72D /* round.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = round.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA30A5C1D4358AF005DE72D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA30A611D4358AF005DE72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FA30A631D4358AF005DE72D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				186E90471D44F5B8002932FF /* UserProfileViewController.swift */,
-				18C559161D447C7F00488371 /* MainViewController.swift */,
+				18C520651D455633002F30C7 /* MainViewController.swift */,
 				186E90441D44E528002932FF /* EventTableCellTableViewCell.swift */,
 				18C5590C1D44717900488371 /* UserSearchTableCell.swift */,
 			);
@@ -189,7 +189,7 @@
 		2FA30A5A1D4358AF005DE72D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FA30A591D4358AF005DE72D /* Round.app */,
+				2FA30A591D4358AF005DE72D /* round.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 			);
 			name = Round;
 			productName = Round;
-			productReference = 2FA30A591D4358AF005DE72D /* Round.app */;
+			productReference = 2FA30A591D4358AF005DE72D /* round.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,7 +301,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FA30A541D4358AF005DE72D /* Build configuration list for PBXProject "Round" */;
+			buildConfigurationList = 2FA30A541D4358AF005DE72D /* Build configuration list for PBXProject "round" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -387,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C520661D455633002F30C7 /* MainViewController.swift in Sources */,
 				18C559111D4474E600488371 /* MessagesViewController.swift in Sources */,
 				2F27A2FF1D43610600EBBBB7 /* SignUpViewController.swift in Sources */,
 				180745A21D4499C3000A35AA /* DistanceFormula.swift in Sources */,
@@ -397,7 +398,6 @@
 				2F27A2FC1D435C9600EBBBB7 /* SignInViewController.swift in Sources */,
 				186E90481D44F5B8002932FF /* UserProfileViewController.swift in Sources */,
 				18C75D8A1D442A45002EEE51 /* GFBase32Utils.m in Sources */,
-				18C559171D447C7F00488371 /* MainViewController.swift in Sources */,
 				2FA30A5D1D4358AF005DE72D /* AppDelegate.swift in Sources */,
 				18D272FB1D440A20001AF7CC /* CreateEventViewController.swift in Sources */,
 				18C75D8F1D442A45002EEE51 /* GFGeoHashQuery.m in Sources */,
@@ -537,7 +537,7 @@
 				INFOPLIST_FILE = Round/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoundDevTeam.Round;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = round;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
@@ -570,7 +570,7 @@
 				INFOPLIST_FILE = Round/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoundDevTeam.Round;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = round;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
@@ -579,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FA30A541D4358AF005DE72D /* Build configuration list for PBXProject "Round" */ = {
+		2FA30A541D4358AF005DE72D /* Build configuration list for PBXProject "round" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FA30A691D4358AF005DE72D /* Debug */,

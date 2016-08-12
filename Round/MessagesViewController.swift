@@ -25,9 +25,6 @@ class MessagesViewController: JSQMessagesViewController {
         
         // Do any additional setup after loading the view.
         
-        self.title = "Mountain Chat"
-        //self.navigationController!.navigationBar.tintColor = colorWithHexString("#f16277")
-        
         self.senderId = "0"
         self.senderDisplayName = "Name"
         
@@ -46,7 +43,18 @@ class MessagesViewController: JSQMessagesViewController {
         messages.append(message3)
         messages.append(message4)
         
-        //self.collectionView.backgroundColor = UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1)
+        self.collectionView.backgroundColor = UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1)
+        
+        var swipe = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipe.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipe)
+        
+        //self.performSegueWithIdentifier("toMessageView", sender: self)
+    }
+    
+    func respondToSwipeGesture(sender: AnyObject!)
+    {
+        self.performSegueWithIdentifier("messageToMain", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,9 +98,9 @@ class MessagesViewController: JSQMessagesViewController {
     private func setupBubbles() {
         let factory = JSQMessagesBubbleImageFactory()
         outgoingBubbleImageView = factory.outgoingMessagesBubbleImageWithColor(
-            /*UIColor.jsq_messageBubbleBlueColor()*/UIColor(red: 65/255, green: 188/255, blue: 236/255, alpha: 1))
+            /*UIColor.jsq_messageBubbleBlueColor()*/UIColor.whiteColor())
         incomingBubbleImageView = factory.incomingMessagesBubbleImageWithColor(
-            /*UIColor.jsq_messageBubbleLightGrayColor()*/colorWithHexString("#f16277"))
+            UIColor.jsq_messageBubbleLightGrayColor())
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!,
@@ -108,16 +116,12 @@ class MessagesViewController: JSQMessagesViewController {
         let message = messages[indexPath.item]
         
         if message.senderId == senderId {
-            cell.textView!.textColor = UIColor.whiteColor()
+            cell.textView!.textColor = UIColor.blackColor()
         } else {
-            cell.textView!.textColor = UIColor.whiteColor()
+            cell.textView!.textColor = UIColor.blackColor()
         }
         
         return cell
-    }
-    
-    @IBAction func dismissView() {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*
