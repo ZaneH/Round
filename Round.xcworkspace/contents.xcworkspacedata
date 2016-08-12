@@ -8,6 +8,9 @@
       location = "group:../round15_Hackathon/round.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Round.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CAY-d0-D1K">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -34,7 +34,7 @@
         <!--Splash View Controller-->
         <scene sceneID="ei0-XE-pQz">
             <objects>
-                <viewController storyboardIdentifier="SplashViewController" id="h4L-6D-MsA" customClass="SplashViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="h4L-6D-MsA" customClass="SplashViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tfW-bZ-lgj"/>
                         <viewControllerLayoutGuide type="bottom" id="NKi-9N-TuI"/>
@@ -64,7 +64,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="lI2-O4-SJN">
             <objects>
-                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CAY-d0-D1K" customClass="SignInViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CAY-d0-D1K" customClass="SignInViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a52-wI-5dL"/>
                         <viewControllerLayoutGuide type="bottom" id="lSC-Rp-Cfl"/>
@@ -176,7 +176,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="aEy-tX-Sb3">
             <objects>
-                <viewController id="zcK-im-EUd" customClass="SignUpViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zcK-im-EUd" customClass="SignUpViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ku-Qq-aMY"/>
                         <viewControllerLayoutGuide type="bottom" id="aRM-sf-9su"/>
@@ -357,7 +357,7 @@
         <!--Create Event View Controller-->
         <scene sceneID="Zat-4B-nT3">
             <objects>
-                <viewController storyboardIdentifier="createEvent" id="XhE-JQ-Zup" customClass="CreateEventViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createEvent" id="XhE-JQ-Zup" customClass="CreateEventViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zan-rv-CYz"/>
                         <viewControllerLayoutGuide type="bottom" id="RGs-EE-CFU"/>
@@ -502,7 +502,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="vbU-rB-3yx">
             <objects>
-                <viewController storyboardIdentifier="eventSearch" id="B4h-7N-je6" customClass="UserProfileViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventSearch" id="B4h-7N-je6" customClass="UserProfileViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aoa-0A-6W5"/>
                         <viewControllerLayoutGuide type="bottom" id="JZ7-lu-tRz"/>
@@ -545,15 +545,15 @@
                                 <rect key="frame" x="14" y="174" width="572" height="389"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userSearchCell" rowHeight="111" id="IOv-KO-xMJ" customClass="UserSearchTableCell" customModule="Round" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userSearchCell" rowHeight="111" id="IOv-KO-xMJ" customClass="UserSearchTableCell" customModule="round" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="572" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IOv-KO-xMJ" id="tRT-FG-lQh">
                                             <rect key="frame" x="0.0" y="0.0" width="572" height="110.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSQ-Gs-GHr">
-                                                    <rect key="frame" x="27" y="10" width="237" height="48.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSQ-Gs-GHr">
+                                                    <rect key="frame" x="27" y="10" width="451" height="48.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48.5" id="x61-ye-Qm2"/>
                                                     </constraints>
@@ -561,8 +561,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bV-GD-3Mb">
-                                                    <rect key="frame" x="28" y="53" width="115" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bV-GD-3Mb">
+                                                    <rect key="frame" x="28" y="53" width="450" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="j0g-0t-73a"/>
                                                     </constraints>
@@ -570,8 +570,8 @@
                                                     <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G7-sF-q8z">
-                                                    <rect key="frame" x="28" y="71" width="127" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G7-sF-q8z">
+                                                    <rect key="frame" x="28" y="71" width="450" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="8Pd-2R-g1D"/>
                                                     </constraints>
@@ -613,6 +613,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AwP-WO-zN8" firstAttribute="top" secondItem="tRT-FG-lQh" secondAttribute="topMargin" constant="69" id="1EX-Dv-YYl"/>
+                                                <constraint firstItem="HB0-5l-HqU" firstAttribute="leading" secondItem="PSQ-Gs-GHr" secondAttribute="trailing" constant="8" id="1Ih-ZH-L1j"/>
+                                                <constraint firstItem="HB0-5l-HqU" firstAttribute="leading" secondItem="6G7-sF-q8z" secondAttribute="trailing" constant="8" id="2pv-m9-CQc"/>
                                                 <constraint firstItem="HB0-5l-HqU" firstAttribute="top" secondItem="tRT-FG-lQh" secondAttribute="topMargin" id="Ghw-Wg-5bR"/>
                                                 <constraint firstItem="PSQ-Gs-GHr" firstAttribute="leading" secondItem="tRT-FG-lQh" secondAttribute="leadingMargin" constant="19" id="LiB-X2-ZjX"/>
                                                 <constraint firstItem="HB0-5l-HqU" firstAttribute="leading" secondItem="2bV-GD-3Mb" secondAttribute="trailing" constant="233" id="Nyf-f5-kh3"/>
@@ -626,6 +628,7 @@
                                                 <constraint firstItem="PSQ-Gs-GHr" firstAttribute="top" secondItem="tRT-FG-lQh" secondAttribute="topMargin" constant="2" id="hDD-hF-t8O"/>
                                                 <constraint firstItem="HB0-5l-HqU" firstAttribute="centerY" secondItem="tRT-FG-lQh" secondAttribute="centerY" constant="-11.25" id="hmo-3n-LLa"/>
                                                 <constraint firstItem="2bV-GD-3Mb" firstAttribute="leading" secondItem="tRT-FG-lQh" secondAttribute="leadingMargin" constant="20" id="lF2-H6-XvK"/>
+                                                <constraint firstItem="HB0-5l-HqU" firstAttribute="leading" secondItem="2bV-GD-3Mb" secondAttribute="trailing" constant="8" id="nrt-PY-y7m"/>
                                                 <constraint firstItem="AwP-WO-zN8" firstAttribute="top" secondItem="HB0-5l-HqU" secondAttribute="bottom" id="oSj-Tz-Uh4"/>
                                                 <constraint firstItem="AwP-WO-zN8" firstAttribute="centerX" secondItem="HB0-5l-HqU" secondAttribute="centerX" id="pxe-WD-fas"/>
                                                 <constraint firstItem="2bV-GD-3Mb" firstAttribute="top" secondItem="PSQ-Gs-GHr" secondAttribute="bottom" constant="-5.5" id="rOy-YV-FdN"/>
@@ -847,7 +850,7 @@
         <!--Main View Controller-->
         <scene sceneID="hp7-yT-EuT">
             <objects>
-                <viewController storyboardIdentifier="mainView" id="6Hj-VV-QYA" customClass="MainViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="6Hj-VV-QYA" customClass="MainViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wtC-am-Kuw"/>
                         <viewControllerLayoutGuide type="bottom" id="KhZ-NL-dRk"/>
@@ -978,7 +981,7 @@
                                 <rect key="frame" x="14" y="83" width="572" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="111" id="oxN-IP-eV2" customClass="EventTableCellTableViewCell" customModule="Round" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="111" id="oxN-IP-eV2" customClass="EventTableCellTableViewCell" customModule="round" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="572" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oxN-IP-eV2" id="0DP-W8-uFa">
@@ -1118,7 +1121,7 @@
         <!--Messages View Controller-->
         <scene sceneID="qze-Ws-54I">
             <objects>
-                <viewController storyboardIdentifier="messageView" id="ymf-1A-fbm" customClass="MessagesViewController" customModule="Round" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="messageView" id="ymf-1A-fbm" customClass="MessagesViewController" customModule="round" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eaf-UP-ypN"/>
                         <viewControllerLayoutGuide type="bottom" id="VeF-mo-4Ae"/>
